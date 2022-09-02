@@ -1,0 +1,54 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 999px;
+    cursor: pointer;
+    // border: 1px solid var(--bd-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+
+    text-align: center;
+}
+
+.form-avatar:hover > .grid-avatar {
+    opacity: 0.6;
+}
+
+.form-avatar:hover > .icon-camera {
+    display: block;
+}
+
+.grid-avatar {
+    width: 100%;
+}
+
+.icon-camera {
+    position: absolute;
+    display: none;
+    fill: rgba(0, 0, 0, 0.5);
+
+    svg {
+        width: 30px;
+    }
+}
+
+.form-name {
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+// Button
+
+.btn-submit-avatar {
+    margin: 20px;
+}

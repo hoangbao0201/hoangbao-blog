@@ -1,0 +1,128 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 660px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin: 50px 0px;
+    background-color: var(--auth-bg-color);
+}
+
+// form
+
+.form {
+    padding: 0px 107px;
+    position: relative;
+    align-items: center;
+}
+
+.title {
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.form-input {
+    flex: 1;
+    height: var(--form-input-height);
+    font-size: var(--auth-input-size);
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 4px;
+    border: 1px solid var(--bd-color);
+}
+
+// Grid name
+
+.form-group-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid-input-item {
+    padding: 0px 5px;
+}
+
+.form-left {
+    margin-left: -5px;
+}
+.form-right {
+    margin-right: -5px;
+}
+
+// Input Warning
+
+.form-input.warning {
+    border: 1px solid red;
+}
+
+
+
+// Button
+
+.button-submit-register {
+    border: none;
+    color: #ffff;
+    background-color: #fcaf17;
+
+    &:hover {
+        background-color: #fcb017e4;
+    }
+}
+
+//--------
+
+.text-or {
+    color: var(--blur-color);
+    justify-content: center;
+}
+
+// Login with social
+
+.login-with-social {
+    justify-content: center;
+
+    button {
+        color: #ffff;
+    }
+    button + button {
+        margin-left: 10px;
+    }
+}
+
+.button-login-fb {
+    background-color: #3b5998;
+}
+
+.button-login-gg {
+    background-color: #e14b33;
+}
+
+// Responsive
+
+@media (max-width: 767px) {
+    .container {
+        max-width: 540px;
+        margin: 0px;
+    }
+    .form {
+        padding: 0px 15px;
+    }
+    .form-group-row {
+        display: block;
+
+        .grid-input-item {
+            padding: 0px;
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+    }
+}

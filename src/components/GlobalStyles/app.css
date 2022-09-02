@@ -1,0 +1,137 @@
+/* class */
+
+.bgColor {
+    background-color: #f7f9fa;
+}
+
+.dev-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dev-container {
+    max-width: 1820px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dev-container-lg {
+    max-width: 1600px;
+    padding-left: 80px;
+    padding-right: 80px;
+    width: 100%;
+}
+
+/* column */
+.dev-col-2 {
+    width: 16.66666666666667%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+.dev-col-4 {
+    width: 33.33333333333333%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+.dev-col-6 {
+    width: 50%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+.dev-col-8 {
+    width: 66.66666666666667%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+.dev-col-12 {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+/* button */
+
+.dev-btn-sm {
+    min-width: 80px;
+    border-radius: 4px;
+    height: 26px;
+    font-size: 11px;
+    cursor: pointer;
+    border: none;
+}
+.dev-btn-lg {
+    min-width: 129px;
+    border-radius: 4px;
+    height: 37px;
+    font-size: 13px;
+    cursor: pointer;
+    border: none;
+}
+.dev-btn-auto {
+    min-width: 100%;
+    border-radius: 4px;
+    height: 48px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+}
+
+/* Button Action */
+
+.dev-btn-action-sky {
+    background-image: linear-gradient(#3bbed8, #6299f0);
+}
+
+.dev-btn-action-sky:hover {
+    background-image: linear-gradient(#07b4d5, #3984f5);
+}
+
+
+/* Form */
+
+.dev-form-group {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.dev-title-input {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+/* Item Link */
+
+.dev-item-link {
+    width: 100%;
+    display: block;
+    color: var(--text-color) !important;
+}
+
+.dev-warning {
+    color: red;
+}
+
+/* form size */
+
+.dev-avatar-header-size {
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    overflow: hidden;
+}

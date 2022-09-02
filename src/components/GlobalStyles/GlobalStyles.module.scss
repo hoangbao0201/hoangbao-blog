@@ -1,0 +1,72 @@
+:root {
+    --text-color: #333333;
+    --primary-color: #fcaf17;
+    --blur-color: #7a7a9d;
+    --blue-color: #4d96ff;
+
+    --bs-color: 0 0 10px #d9d9d9;
+    --hv-color: #eeee;
+    --bg-color: #ffff;
+
+    // devider
+    --devider-color: #dde1ef;
+
+    // border: color,
+    --bd-color: #eaebf3;
+
+    // Header: height, background, box-shadow
+    --hd-height: 66px;
+    --hd-bg-color: #ffff;
+    --hd-bs-color: 0 0 10px #d9d9d9;
+
+    // Footer:
+    --ft-bg-color: #2a2a86;
+    --ft-text-color: #ffff;
+
+    // Form auth: input,
+    --auth-bg-color: #ffff;
+    --form-input-height: 48px;
+    --auth-input-size: 15px;
+
+    // Form profile update:
+    // --form-width-avatar: 120px;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: svn-gilroy, sans-serif;
+    color: var(--text-color);
+}
+
+// default
+
+a,
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+input {
+    outline: none;
+}
+
+li {
+    text-decoration: none;
+    list-style: none;
+}
+
+hr {
+    height: 1px;
+    margin: 9px 0;
+    overflow: hidden;
+    width: 100%;
+    display: block;
+    background-color: #e5e5e5;
+}
+

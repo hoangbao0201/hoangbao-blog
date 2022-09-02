@@ -1,0 +1,38 @@
+.dropdown {
+    position: relative;
+    z-index: 20;
+}
+
+.item-main {
+    cursor: pointer;
+    user-select: none;
+}
+
+.list-item {
+    // top: 30px;
+    margin-top: 5px;
+    min-width: 200px;
+    padding: 3px 0px;
+    position: absolute;
+    border-radius: 4px;
+    background-color: #ffff;
+    box-shadow: var(--bs-color);
+    
+    display: none;   
+}
+
+.item-link {
+    padding: 8px 16px;
+    margin: 6px 0px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--hv-color);
+    }
+}
+
+
+
+.dropdown.active .list-item {
+    display: block;
+}

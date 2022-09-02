@@ -1,0 +1,70 @@
+.wrapper {
+    display: none;
+}
+
+.modal-overlay {
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 21;
+    display: none;
+    position: fixed;
+    animation: fadeIn linear 0.2s;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+    width: 60%;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 22;
+    position: fixed;
+    padding-top: 16px;
+    padding-right: 16px;
+    padding-left: 16px;
+    background-color: #ffff;
+    animation: fadeIn linear 0.2s;
+    border: 1px solid var(--bd-color);
+
+    transform: translateX(100%);
+    transition: transform linear 0.2s;
+}
+
+.input-checkbox:checked ~ .modal-overlay {
+    display: block;
+}
+
+.input-checkbox:checked ~ .nav-container {
+    transform: translateX(0%);
+}
+
+// Button
+
+.btn-close-modal {
+    cursor: pointer;
+    padding: 5px;
+}
+
+
+
+// animation
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+// Responsive
+
+@media (max-width: 767px) {
+    .wrapper {
+        display: block;
+    }
+}

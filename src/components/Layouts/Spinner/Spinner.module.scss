@@ -1,0 +1,63 @@
+/* Spinner */
+
+.spinner {
+    fill: #1c64f2;
+    color: rgb(229, 231, 235);
+
+    animation: spin 1s infinite linear;
+}
+
+// set prop
+
+.size-sm {
+    height: 20px;
+    width: 20px;
+}
+
+.size-lg {
+    height: 40px;
+    width: 40px;
+}
+
+.size-auto {
+    height: 40px;
+    width: 40px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+// Modal
+
+.modal {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.modal-auto {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+// -------
+
+/* Animation */
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(359deg);
+    }
+}
+
+/* ---------- */
