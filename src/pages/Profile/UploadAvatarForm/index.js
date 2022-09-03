@@ -14,6 +14,7 @@ function UploadAvatar({ uploadAvatar }) {
         state: { authLoading, user },
     } = useContext(AuthContext);
 
+    const [isSpinner, setIsSpinner] = useState(false);
     const [showAlert, setShowAlert] = useState(null);
     const [singleProgress, setSingleProgress] = useState(0);
     const [valueInput, setValueInput] = useState(null);
@@ -29,14 +30,24 @@ function UploadAvatar({ uploadAvatar }) {
     };
 
     const uploadSingleFile = {
-        onUploadProgress: (progressEvent) => console.log(progressEvent.loaded),
+        onUploadProgress: (progressEvent) => {
+            let { loaded, total } = progressEvent;
+
+            const percent = Math.floor((loaded / total) * 100);
+
+            console.log( `${loaded}kb of ${total}kb | ${percent}%` );
+
+            setSingleProgress(percent);
+        },
     };
 
     const onSubmitFormUpload = async (e) => {
         e.preventDefault();
+        setIsSpinner(true);
 
         if(!dataImage) {
             setShowAlert("Bạn chưa upload ảnh");
+            setIsSpinner(false);
 
             setTimeout(() => {
                 setShowAlert(null);
@@ -47,21 +58,10 @@ function UploadAvatar({ uploadAvatar }) {
         const formData = new FormData();
         formData.append("file", dataImage);
 
-        const dataServer = await uploadAvatar(formData, {
-            onUploadProgress: (progressEvent) => {
-                let { loaded, total } = progressEvent;
+        const dataServer = await uploadAvatar(formData, uploadSingleFile);
 
-
-                // console.log({
-                //     loaded: loaded,
-                //     total: total
-                // })
-
-                setSingleProgress(Math.floor((loaded / total) * 100));
-            },
-        });
-
-
+        setIsSpinner(false);
+        window.location.reload();
         console.log(dataServer);
     };
 
@@ -114,10 +114,11 @@ function UploadAvatar({ uploadAvatar }) {
             { showAlert && <p className={cx("dev-warning")}>{showAlert}</p> }
 
             <button
-                className={cx("dev-btn-lg", "btn-submit-avatar")}
+                className={cx("dev-btn-lg", "btn-submit-avatar", "dev-btn-action-sky")}
                 onClick={onSubmitFormUpload}
+                disabled={isSpinner ? "disabled" : ""}
             >
-                Upload
+                { isSpinner ? <Spinner size="sm"/> : "Upload" }
             </button>
         </div>
     );

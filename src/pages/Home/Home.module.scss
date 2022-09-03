@@ -1,0 +1,15 @@
+// .wrapper {
+//     padding: 0px;
+// }
+
+@media (min-width: 620px) and (max-width: 1050px) {
+    .wrapper {
+        padding: 15px !important;  
+    }
+}
+
+@media (max-width: 620px) {
+    .wrapper {
+        padding: 0px !important;  
+    }
+}

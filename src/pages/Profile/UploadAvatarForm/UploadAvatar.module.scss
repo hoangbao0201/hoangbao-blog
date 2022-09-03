@@ -5,8 +5,8 @@
 }
 
 .form-avatar {
-    width: 120px;
-    height: 120px;
+    width: var(--form-upload-avatar);
+    height: var(--form-upload-avatar);
     border-radius: 999px;
     cursor: pointer;
     // border: 1px solid var(--bd-color);

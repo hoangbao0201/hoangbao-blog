@@ -1,0 +1,57 @@
+.grid-box {
+    width: 80px;
+    height: 80px;
+    top: -5px;
+    left: -5px;
+    overflow: hidden;
+    position: absolute;
+    // background-color: green;
+}
+
+.badge {
+    top: 20px;
+    right: -10px;
+    width: 120px;
+    height: 16px;
+    line-height: 16px;
+    color: #ffff;
+    font-size: 11px;
+    position: absolute;
+    text-align: center;
+    background-color: #e8505b;
+    transform: rotate(-45deg);
+}
+
+.grid-box::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    width: 16px;
+    height: 30px;
+    top: 0px;
+    right: 8px;
+    transform: rotate(-10deg);
+}
+
+.grid-box::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    width: 16px;
+    height: 30px;
+    left: 0px;
+    bottom: 3px;
+    transform: rotate(-90deg);
+}
+
+
+// Customize
+
+.outstanding.grid-box::before {
+    background-color: #be3941;
+}
+.outstanding.grid-box::after {
+    background-color: #be3941;
+}

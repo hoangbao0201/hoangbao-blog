@@ -46,6 +46,8 @@ function Dropdown({ children, left, right }) {
             <div className={cx("list-item", `${right ? "right" : ""}`, `${left ? "left" : ""}`)}>
                 <a href="/profile/information" className={cx("dev-item-link", "item-link")}>Trang cá nhân</a>
                 <Devider />
+                <a href="/create/post" className={cx("dev-item-link", "item-link")}>Tạo bài</a>
+                <Devider />
                 <li className={cx("item-link")} onClick={eventLogoutUser}>Đăng xuất</li>
             </div>
         </div>

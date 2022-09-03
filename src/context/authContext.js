@@ -134,6 +134,7 @@ const AuthContextProvider = ({ children }) => {
     };
 
     const uploadAvatar = async (data, option) => {
+
         try {
             const response = await axios.post(`${apiUrl}/auth/upload-avatar`, data, option);
 

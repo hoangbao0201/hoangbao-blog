@@ -40,6 +40,8 @@ function ContentUpload({ user, updateUser }) {
             }, 5000);
         }
 
+        window.location.reload();
+
     };
 
     return (
