@@ -1,22 +1,25 @@
 import classNames from "classnames/bind";
 import styles from "./Spinner.module.scss";
+import TwinSpinner from "./TwinSpinner";
 
 const cx = classNames.bind(styles);
 
-function Spinner({ size, modal }) {
-
-
+function Spinner({ size, modal, text }) {
     // let classed = "size-lg";
     let classed = ["size-lg"];
-    if(size) {
+    if (size) {
         // classed = `size-${size}`;
-        classed = [ `size-${size}`];
+        classed = [`size-${size}`];
     }
 
     return (
-        <span className={cx( `${ modal ? "modal" : "" }`, `${ size==="auto" ? "modal-auto" : "" }` )}>
+        <span
+            className={cx(
+                `${modal ? "modal" : ""}`,
+                `${size === "auto" ? "modal-auto" : ""}`
+            )}
+        >
             <svg
-                role="status"
                 className={cx("spinner", "animation-spin", ...classed)}
                 viewBox="0 0 100 101"
                 fill="none"
@@ -31,6 +34,7 @@ function Spinner({ size, modal }) {
                     fill="currentFill"
                 ></path>
             </svg>
+            { text && <div className={cx("text-loading")}>Đang tải ...</div> }
         </span>
     );
 }

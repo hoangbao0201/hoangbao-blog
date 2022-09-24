@@ -1,47 +1,74 @@
 .sidebar {
-    position: fixed;
-    padding: 15px 20px;
-    border: 1px solid var(--bd-color);
-    border-radius: 8px;
+    padding: 5px;
+    left: 15px;
+    width: 80px;
+    top: calc(var(--hd-height) + 20px);
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    position: sticky;
     background-color: #ffff;
 }
 
-.grid-btn {
-    width: 44px;    
+// Create sidebar
+
+.create-post {
+    width: 44px;
     height: 44px;
+    background-color: blue;
+    border-radius: 999px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 999px;
-    background-color: blue;
-}
-
-.grid-btn:hover .icon {
-    transform: scale(1.2);
-}
-
-.icon {
-    fill: #ffff;
-    width: 18px;
+    cursor: pointer;
+    animation: all 2s linear;
     
-    transition-property: transform, -webkit-transform;
-    transition-duration: 0.3s, 0.3s;
-    transition-timing-function: ease, ease;
-    transition-delay: 0s, 0s;
-}
-
-.icon.active {
-    transform: scale(1.3);
-    animation: fadeRotate 0.1s linear forwards;
-}
-
-// Animation
-
-@keyframes fadeRotate {
-    from {
-        transform: rotate(0deg) scale(1.2);
+    svg {
+        width: 16px;
+        fill: #ffff;
+        transition: 0.1s linear;
+        font-weight: 600;
     }
-    to {
-        transform: rotate(45deg) scale(1.2);
+    &:hover>svg{
+        transform: scale(1.3);
+    }
+}
+
+.create-post.active {
+    
+    svg {
+        transform: scale(1.3) rotate(45deg);
+    }
+}
+
+// Item Sidebar
+
+.item-btn-sidebar {
+    padding: 5px;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.item-sidebar {
+    width: 72px;
+    height: 72px;
+    color: #1a1a1a;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    text-transform: uppercase;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    &:hover {
+        background-color: var(--hv-color);
     }
 }

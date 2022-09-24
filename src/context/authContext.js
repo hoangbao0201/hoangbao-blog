@@ -8,6 +8,7 @@ export const AuthContext = createContext();
 
 const AuthContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(authReducer, {
+        admin: false,
         authLoading: true,
         isAuthenticated: false,
         user: null,
@@ -20,25 +21,31 @@ const AuthContextProvider = ({ children }) => {
 
         try {
             const response = await axios.get(`${apiUrl}/auth`);
-
             if (response.data.success) {
                 dispatch({
-                    type: "SET_AUTH",
+                    type: "AUTH_LOADED_SUCCESS",
                     payload: {
                         authLoading: false,
                         isAuthenticated: true,
                         user: response.data.user,
                     },
                 });
+
+                if (response.data.admin) {
+                    dispatch({
+                        type: "AUTH_ADMIN_SUCCESS",
+                    });
+                }
             }
         } catch (error) {
             localStorage.removeItem(LOCAL_STORAGE_TOKEN_NAME);
             setAuthToken(null);
             dispatch({
-                type: "SET_AUTH",
+                type: "AUTH_LOADED_SUCCESS",
                 payload: {
                     isAuthenticated: false,
                     user: null,
+                    admin: false,   
                 },
             });
         }
@@ -101,7 +108,7 @@ const AuthContextProvider = ({ children }) => {
     const logoutUser = () => {
         localStorage.removeItem(LOCAL_STORAGE_TOKEN_NAME);
         dispatch({
-            type: "SET_AUTH",
+            type: "AUTH_LOADED_SUCCESS",
             payload: {
                 isAuthenticated: false,
                 user: null,
@@ -134,9 +141,12 @@ const AuthContextProvider = ({ children }) => {
     };
 
     const uploadAvatar = async (data, option) => {
-
         try {
-            const response = await axios.post(`${apiUrl}/auth/upload-avatar`, data, option);
+            const response = await axios.post(
+                `${apiUrl}/auth/upload-avatar`,
+                data,
+                option
+            );
 
             return response.data;
         } catch (error) {
@@ -149,15 +159,15 @@ const AuthContextProvider = ({ children }) => {
                 };
             }
         }
-    }
+    };
 
     const dataAuthContext = {
-        loginUser,
+        state,
         registerUser,
+        loginUser,
         logoutUser,
         updateUser,
         uploadAvatar,
-        state,
     };
     return (
         <AuthContext.Provider value={dataAuthContext}>

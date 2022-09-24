@@ -1,0 +1,41 @@
+.wrapper {
+}
+
+.list-images {
+    display: flex;
+}
+
+.grid-image {
+    overflow: hidden;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 100%;
+    }
+}
+
+// Customize
+
+.form-square {
+    .grid-image {
+        border-radius: 8px;
+        border: 2px dashed #dddd;
+    }
+}
+
+.size-lg {
+    .grid-image {
+        width: var(--form-upload-avatar);
+        height: var(--form-upload-avatar);
+    }
+}
+
+.size-sm {
+    .grid-image {
+        width: 80px;
+        height: 80px;
+    }
+}

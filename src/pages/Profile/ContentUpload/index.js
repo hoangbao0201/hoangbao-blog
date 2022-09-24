@@ -50,10 +50,10 @@ function ContentUpload({ user, updateUser }) {
             <form className={cx("form")} onSubmit={EventSubmitForm}>
                 <div className={cx("title")}>Thông tin</div>
                 <div className={cx("dev-form-group", "form-group-input")}>
-                    <div className={cx("dev-title-input")}>Tên:</div>
+                    <div className={cx("dev-title-column-input")}>Tên:</div>
                     <input
                         type="text"
-                        className={cx("form-input")}
+                        className={cx("dev-form-input")}
                         required
                         placeholder={valueInput.name}
                         name="name"
@@ -62,10 +62,10 @@ function ContentUpload({ user, updateUser }) {
                     />
                 </div>
                 <div className={cx("dev-form-group", "form-group-input")}>
-                    <div className={cx("dev-title-input")}>Tài khoản:</div>
+                    <div className={cx("dev-title-column-input")}>Tài khoản:</div>
                     <input
                         type="text"
-                        className={cx("form-input")}
+                        className={cx("dev-form-input")}
                         required
                         placeholder={valueInput.username}
                         name="username"
@@ -74,20 +74,20 @@ function ContentUpload({ user, updateUser }) {
                     />
                 </div>
                 <div className={cx("dev-form-group", "form-group-input")}>
-                    <div className={cx("dev-title-input")}>Mật khẩu cũ:</div>
+                    <div className={cx("dev-title-column-input")}>Mật khẩu cũ:</div>
                     <input
                         type="password"
-                        className={cx("form-input")}
+                        className={cx("dev-form-input")}
                         required
                         name="oldPassword"
                         onChange={EventOnChangeInput}
                     />
                 </div>
                 <div className={cx("dev-form-group", "form-group-input")}>
-                    <div className={cx("dev-title-input")}>Mật khẩu mới:</div>
+                    <div className={cx("dev-title-column-input")}>Mật khẩu mới:</div>
                     <input
                         type="password"
-                        className={cx("form-input")}
+                        className={cx("dev-form-input")}
                         required
                         name="newPassword"
                         onChange={EventOnChangeInput}

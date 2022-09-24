@@ -5,26 +5,38 @@ import styles from "./CardProduct.module.scss";
 
 const cx = classNames.bind(styles);
 
-function CardProduct() {
+function CardProduct({ post, id }) {
+
     return (
         <div className={cx("product")}>
-            <a href="/product:100083">
+            <a href={`/product/${id}`}>
                 <div className={cx("grid-item", "dev-card")}>
                     <StickBadge>new product</StickBadge>
-                    <div className={cx("grid-image")}></div>
+                    <div className={cx("grid-image")}>
+                        {post.avatar ? (
+                            <img
+                                className={cx("image-card")}
+                                src={post.avatar}
+                            />
+                        ) : (
+                            <></>
+                        )}
+                    </div>
                     <div className={cx("content-card")}>
                         <div className={cx("title")}>
-                            C++ cho người mới bắt đầu
+                            {post ? post.title : "title"}
                         </div>
                         <div className={cx("description")}>
-                            Khóa học lập trình C++ cơ bản cho người mới bắt đầu.
-                            Khóa học này sẽ cung cấp những kiến thức cơ bản, dễ
-                            hiểu nhất về ngôn ngữ lập trình C++.
+                            {post ? post.description : "description"}
                         </div>
                         <Devider />
                         <div className={cx("information")}>
-                            <div className={cx("price")}>Price 200.000 ₫</div>
-                            <div className={cx("sold")}>Sold 120</div>
+                            <div className={cx("price")}>
+                                Price {post ? post.price : "1000"} ₫
+                            </div>
+                            <div className={cx("sold")}>
+                                Sold {post ? post.sold : "1000"}
+                            </div>
                         </div>
                     </div>
                 </div>

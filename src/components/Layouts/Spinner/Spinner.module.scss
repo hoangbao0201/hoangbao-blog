@@ -4,7 +4,12 @@
     fill: #1c64f2;
     color: rgb(229, 231, 235);
 
-    animation: spin 1s infinite linear;
+    animation: spinner 1s infinite linear;
+}
+
+.text-loading {
+    font-size: 15px;
+    margin-top: 15px;
 }
 
 // set prop
@@ -22,23 +27,26 @@
 .size-auto {
     height: 40px;
     width: 40px;
-    margin-right: auto;
-    margin-left: auto;
+    // margin-right: auto;
+    // margin-left: auto;
 }
 
 // Modal
 
 .modal {
-    position: absolute;
     top: 0px;
     right: 0px;
     bottom: 0px;
     left: 0px;
-    z-index: 100;
+    color: #1c64f2;
+    z-index: 1001;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.4);
+
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.5);
+    flex-direction: column;
 }
 
 .modal-auto {
@@ -51,13 +59,12 @@
 
 /* Animation */
 
-@keyframes spin {
-    0% {
+
+@keyframes spinner {
+    from {
         transform: rotate(0deg);
     }
-    100% {
-        transform: rotate(359deg);
+    to {
+        transform: rotate(360deg);
     }
 }
-
-/* ---------- */

@@ -1,0 +1,43 @@
+
+// form
+
+.form {
+    // padding: 0px 15px;
+    position: relative;
+    align-items: center;
+}
+
+.form-input {
+    flex: 1;
+    height: var(--form-input-height);
+    font-size: var(--auth-input-size);
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 4px;
+    border: 1px solid var(--bd-color);
+}
+
+.input-description {
+    font-family: inherit;
+    min-height: 100px;
+    padding: 10px 15px;
+    outline: none;
+}
+
+// Button
+
+.button-submit-register {
+    border: none;
+    color: #ffff;
+    background-color: #fcaf17;
+
+    &:hover {
+        background-color: #fcb017e4;
+    }
+}
+
+// Responsive
+
+@media (max-width: 767px) {
+    
+}

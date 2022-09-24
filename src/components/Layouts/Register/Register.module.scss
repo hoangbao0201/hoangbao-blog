@@ -64,7 +64,15 @@
     border: 1px solid red;
 }
 
+// icon-show-pass
 
+.icon-show-pass {
+    line-height: var(--form-input-height);
+    position: absolute;
+    right: 10px;
+    padding: 0px 5px;
+    cursor: pointer;
+}
 
 // Button
 

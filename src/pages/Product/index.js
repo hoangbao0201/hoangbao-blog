@@ -1,21 +1,47 @@
+import { useContext, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import Spinner from "~/components/Layouts/Spinner";
+import { PostContext } from "~/context/postContext";
+import ImageProduct from "./ImageProduct";
+
 import classNames from "classnames/bind";
-import ImageForm from "./ImageForm";
-import InfomationForm from "./InfomationForm";
 import styles from "./Product.module.scss";
+import InfoProduct from "./InfoProduct";
 
 const cx = classNames.bind(styles);
 
 function Product() {
-    return (
-        <div className={cx("wrapper", "dev-container-lg")}>
-            <div className={cx("dev-content")}>
+    const params = useParams();
+
+    const {
+        state: { post, postLoading },
+        getPost,
+    } = useContext(PostContext);
+
+    useEffect(() => {
+        getPost(params.id);
+    }, []);
+
+    let body = null;
+    if (postLoading) {
+        // body = <Spinner size="auto" />;
+        return
+    } else {
+        body = (
+            <>
                 <div className={cx("content-image")}>
-                    <ImageForm />
+                    <ImageProduct post={post} />
                 </div>
                 <div className={cx("content-information")}>
-                    <InfomationForm />
+                    <InfoProduct post={post} />
                 </div>
-            </div>
+            </>
+        );
+    }
+
+    return (
+        <div className={cx("wrapper", "dev-container-lg")}>
+            <div className={cx("container")}>{body}</div>
         </div>
     );
 }

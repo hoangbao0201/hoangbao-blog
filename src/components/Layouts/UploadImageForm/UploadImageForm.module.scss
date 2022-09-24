@@ -1,34 +1,59 @@
-.grid-image {
-    width: 80px;
-    height: 80px;
-    margin: 5px 10px;
-    border: 3px dashed var(--blur-color);
-    border-radius: 8px;
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+// Form image
+
+.form-image {
+    width: var(--form-upload-avatar);
+    height: var(--form-upload-avatar);
+    padding: 5px;
+
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
 
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
+    position: relative;
 
-    // animation: fadeHide 1s linear;
-}
-
-.grid-image:hover {
-    opacity: 0.7;
-}
-
-
-.icon-plus {
-    width: 25%;
-}
-
-// Animation
-
-@keyframes fadeHide {
-    from {
-        opacity: 0;
+    svg {
+        width: 30px;
     }
-    to {
-        opacity: 1;
+}
+
+.form-image:hover > .grid-image {
+    opacity: 0.6;
+}
+
+.form-image:hover > .icon-camera {
+    display: block;
+}
+
+// Grid image 
+
+.grid-image {
+    width: 100%;
+}
+
+.icon-camera {
+    position: absolute;
+    display: none;
+    fill: rgba(0, 0, 0, 0.5);
+
+    svg {
+        width: 30px;
+    }
+}
+
+// Customize
+
+.form-square {
+    .form-image {
+        border-radius: 8px;
+        border: 2px dashed var(--blur-color);
     }
 }

@@ -2,11 +2,23 @@
     margin-top: 20px;
 }
 
+.container {
+    display: flex;
+}
 
 .content-image {
-    padding: 15px;
+    max-width: 768px;
+    width: 100%;
 }
 
 .content-information {
-    padding: 20px;
+    padding: 0px 15px;
+}
+
+// Response
+
+@media (max-width: 880px) {
+    .container {
+        flex-direction: column;
+    }
 }

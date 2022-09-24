@@ -1,6 +1,8 @@
 import classNames from "classnames/bind";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "~/context/authContext";
+import { iconEyeHidden, iconEyeShow } from "~/public/imgSvg";
+import WarningForm from "../WarningForm";
 import styles from "./Register.module.scss";
 
 const cx = classNames.bind(styles);
@@ -8,6 +10,7 @@ const cx = classNames.bind(styles);
 function Register() {
     const { registerUser } = useContext(AuthContext);
 
+    const [showPass, setShowPass] = useState(false);
     const [valueAlert, setValueAlert] = useState(null);
     // const [inputWarning, setInputWarning] = useState(null);
     const [valueInput, setValueInput] = useState({
@@ -58,13 +61,16 @@ function Register() {
                                 "form-left"
                             )}
                         >
+                            <div className={cx("dev-title-stick-input")}>
+                                Họ
+                            </div>
                             <input
                                 type="text"
                                 className={cx(
-                                    "form-input",
+                                    "dev-form-input"
                                     // `${inputWarning == "name" ? "warning" : ""}`
                                 )}
-                                placeholder="Họ"
+                                // placeholder="Nguyễn Hoàng"
                                 required
                                 name="surname"
                                 value={valueInput.surname}
@@ -78,12 +84,13 @@ function Register() {
                                 "form-right"
                             )}
                         >
+                            <div className={cx("dev-title-stick-input")}>
+                                Tên
+                            </div>
                             <input
                                 type="text"
-                                className={cx(
-                                    "form-input",
-                                )}
-                                placeholder="Tên"
+                                className={cx("dev-form-input")}
+                                // placeholder="Bảo"
                                 required
                                 name="name"
                                 value={valueInput.name}
@@ -92,12 +99,13 @@ function Register() {
                         </div>
                     </div>
                     <div className={cx("dev-form-group")}>
+                        <div className={cx("dev-title-stick-input")}>
+                            Tài khoản
+                        </div>
                         <input
                             type="text"
-                            className={cx(
-                                "form-input",
-                            )}
-                            placeholder="Tài khoản"
+                            className={cx("dev-form-input")}
+                            // placeholder="hoangbao"
                             required
                             name="username"
                             value={valueInput.username}
@@ -105,25 +113,33 @@ function Register() {
                         />
                     </div>
                     <div className={cx("dev-form-group")}>
+                        <div className={cx("dev-title-stick-input")}>
+                            Mật khẩu
+                        </div>
                         <input
-                            type="password"
-                            className={cx(
-                                "form-input",
-                            )}
-                            placeholder="Mật khẩu"
+                            type={showPass ? "text" : "password"}
+                            className={cx("dev-form-input")}
+                            // placeholder="..."
                             required
                             name="password"
                             value={valueInput.password}
                             onChange={EventOnChangeInput}
                         />
+                        <span
+                            className={cx("icon-show-pass")}
+                            onClick={() => setShowPass(!showPass)}
+                        >
+                            {showPass ? iconEyeShow : iconEyeHidden}
+                        </span>
                     </div>
                     <div className={cx("dev-form-group")}>
+                        <div className={cx("dev-title-stick-input")}>
+                            Nhập lại mật khẩu
+                        </div>
                         <input
-                            type="password"
-                            className={cx(
-                                "form-input",
-                            )}
-                            placeholder="Nhập lại mật khẩu"
+                            type={showPass ? "text" : "password"}
+                            className={cx("dev-form-input")}
+                            // placeholder="..."
                             required
                             name="rePassword"
                             value={valueInput.rePassword}
@@ -131,7 +147,7 @@ function Register() {
                         />
                     </div>
                     <div className={cx("dev-form-group", "dev-warning")}>
-                        {valueAlert}
+                        {valueAlert && <WarningForm>{valueAlert}</WarningForm>}
                     </div>
                     <div className={cx("dev-form-group")}>
                         <button

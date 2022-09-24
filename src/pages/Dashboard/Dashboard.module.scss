@@ -1,0 +1,113 @@
+
+.wrapper {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    box-shadow: var(--bs-color);
+    background-color: #ffff;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.grid-table {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    min-width: 880px;
+    border-spacing: 0;
+    overflow: hidden;
+    
+    th, td {
+        padding: 15px 15px;
+        text-align: start;
+        min-height: 50px;
+    }
+    td {
+        line-height: 1;
+        vertical-align: top;
+        border-top: 1px solid #ddd;
+    }
+}
+
+.first {
+    width: 5%;
+}
+
+.id {
+    width: 10%;
+}
+
+.title {
+    width: 20%;
+}
+
+.description {
+    width: 40%;
+}
+
+.price {
+    width: 10%;
+}
+
+.sold {
+    width: 5%;
+}
+
+.edit {
+    width: 10%;
+}
+
+// Button
+
+.btn-action-edit + .btn-action-delete{
+    margin-top: 5px;
+}
+
+.btn-action-edit {
+    background-color: #34318c;
+    color: #ffff;
+}
+
+.btn-action-delete {
+    background-color: var(--danger-color);
+    color: #ffff;
+}
+
+// Children
+
+.modal-list-btn {
+    justify-content: flex-end;
+}
+
+.modal-action-delete {
+    color: #ffff;
+    background-color: var(--danger-color);
+    margin-right: 10px;
+}
+
+.modal-action-close {
+    color: #ffff;
+    background-color: #565e64;
+}
+
+// Content
+
+.content-td {
+    // overflow: hidden;
+    // display: -webkit-box;
+    // -webkit-line-clamp: 2;
+    // text-overflow: ellipsis;
+    // -webkit-box-orient: vertical;
+
+    padding: 5px;
+    line-height: 1;
+    height: 50px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.value-description {
+    border-radius: 4px;
+    border: 1px solid var(--blur-color);
+}

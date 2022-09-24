@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import DefaultLayout from "./components/DefaultLayout";
+import Home from "./pages/Home";
 import PageError from "./pages/PageError";
 import publicRouter from "./routes";
 
@@ -32,8 +33,23 @@ function App() {
                             }
                         ></Route>
                     );
-
                 })}
+                <Route
+                    path="/"
+                    element={
+                        <DefaultLayout>
+                            <Home />
+                        </DefaultLayout>
+                    }
+                />
+                <Route
+                    path="*"
+                    element={
+                        <DefaultLayout>
+                            <PageError />
+                        </DefaultLayout>
+                    }
+                />
             </Routes>
         </Router>
     );

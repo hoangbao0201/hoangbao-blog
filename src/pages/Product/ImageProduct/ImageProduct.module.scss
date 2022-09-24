@@ -1,0 +1,43 @@
+.avatar-image {
+    width: 350px;
+    height: 350px;
+    background-color: #ffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    
+    img {
+        width: 100%;
+    }
+}
+
+.list-images {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list-images {
+    margin-top: 20px;
+}
+
+.grid-image {
+    width: 82px;
+    height: 82px;
+    margin: 5px;
+    background-color: #ffff;
+    border: 2px solid #ffff;  
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    cursor: pointer;
+
+}
+
+.grid-image.active {
+    border: 2px solid #ee4d2d !important;  
+}

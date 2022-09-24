@@ -1,0 +1,59 @@
+.container {
+    margin-top: 15px;
+    background-color: #ffff;
+    padding: 15px;
+}
+
+.grid-table {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-spacing: 0;
+    min-width: 880px;
+    
+    th, td {
+        padding: 15px 15px;
+        text-align: start;
+        min-height: 50px;
+    }
+    td {
+        border-top: 1px solid #ddd;
+    }
+}
+
+.product {
+    width: 25%;
+}
+
+.price {
+    width: 20%;
+}
+
+.amount {
+    width: 15%;
+}
+
+.money {
+    width: 15%;
+}
+
+.manipulation {
+    width: 20%;
+}
+
+
+// Button 
+
+.btn-delete-product-cart {
+    background-color: var(--danger-color);
+}
+
+// Response
+
+@media (max-width: 900px) {
+    .table {
+        overflow-x: scroll;
+    }
+}

@@ -1,0 +1,32 @@
+.title {
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 35px;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.input-description {
+    font-family: inherit;
+    min-height: 100px;
+    padding: 10px 15px;
+    outline: none;
+}
+
+// adress-phone
+
+.adress-phone {
+    line-height: 48px;
+    min-width: 50px;
+    padding: 0px 10px;
+    position: absolute;
+    text-align: center;
+    background-color: #eeee;
+    border-radius: 4px 0px 0px 4px;
+    border-right: 1px solid #ddd;
+}
+
+.phone-input {
+    padding-left: 70px !important;
+}

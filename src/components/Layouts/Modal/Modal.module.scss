@@ -1,0 +1,91 @@
+.wrapper {
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 1000;
+    position: fixed;
+    animation: fadeIn 0.2s linear;
+    background-color: rgba(0, 0, 0, 0.07);
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+// Modal
+
+.modal {
+    width: 600px;
+    border-radius: 8px;
+    background-color: #ffff;
+    border: 1px solid var(--bd-color);
+    box-shadow: 0px 0px 6px #ccc;
+}
+
+.modal-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 15px 10px 15px;
+}
+
+// Text
+
+.title-heading {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+// btn close
+
+.iconclose {
+    padding: 5px;
+    cursor: pointer;
+    
+    svg {
+        width: 14px;
+    }
+}
+
+// Content
+
+.content {
+    padding: 15px;
+}
+
+// Customize
+
+.modal {
+    animation: fadeShowDown 0.2s linear forwards;
+}
+
+.modal-center {
+    margin: auto;
+}
+
+.modal-top {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Animation
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeShowDown {
+    from {
+        margin-top: 0;
+    }
+    to {
+        margin-top: 20px;
+    }
+}

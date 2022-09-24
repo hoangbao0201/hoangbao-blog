@@ -1,0 +1,29 @@
+.content {
+    width: 100%;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+
+    .sale-price {
+        font-size: 16px;
+        margin-right: 10px;
+        text-decoration: line-through;
+    }
+    
+    .price-product {
+        color: #ee4d2d;
+        font-size: 25px;
+    }
+}
+
+.btn-buy {
+    color: #ffff;
+    background-color: #ee4d2d;
+}

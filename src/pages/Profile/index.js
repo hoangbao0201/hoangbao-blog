@@ -10,30 +10,24 @@ const cx = classNames.bind(styles);
 
 function Profile() {
     const {
-        state: { authLoading, isAuthenticated, user }, updateUser, uploadAvatar
+        state: { authLoading, isAuthenticated, user },
+        updateUser,
+        uploadAvatar,
     } = useContext(AuthContext);
 
     let body = null;
     if (authLoading) {
-        body = (
-            // <Spinner size="auto"/>
-            <></>
-        );
     } else {
-        if (!isAuthenticated) {
-            return <Navigate to="/" />;
-        } else {
-            body = (
-                <>
-                    <div className={cx("grid-form-avatar", "dev-col-4")}>
-                        <UploadAvatar uploadAvatar={uploadAvatar}/>
-                    </div>
-                    <div className={cx("grid-form-update", "dev-col-8")}>
-                        <ContentUpload user={user} updateUser={updateUser}/>
-                    </div>
-                </>
-            );
-        }
+        body = (
+            <>
+                <div className={cx("grid-form-avatar", "dev-col-4")}>
+                    <UploadAvatar uploadAvatar={uploadAvatar} />
+                </div>
+                <div className={cx("grid-form-update", "dev-col-8")}>
+                    <ContentUpload user={user} updateUser={updateUser} />
+                </div>
+            </>
+        );
     }
 
     return (

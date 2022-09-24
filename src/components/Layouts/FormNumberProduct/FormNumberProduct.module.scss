@@ -1,0 +1,65 @@
+:root {
+    --size-btn: 32px;
+}
+
+.form-quatity-buy {
+    margin: 0px 15px;
+    display: flex;
+    overflow: hidden;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.09);
+}
+
+.btn-form {
+    width: var(--size-btn);
+    height: var(--size-btn);
+    outline: none;
+    font-size: 22px;
+    cursor: pointer;
+
+    color: rgba(0, 0, 0, 0.8);
+    background-color: #ffff;
+    border: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+.box-number {
+    width: 50px;
+    height: var(--size-btn);
+    line-height: var(--size-btn);
+    text-align: center;
+    font-size: 16px;
+
+    
+    border-right: 1px solid rgba(0, 0, 0, 0.09);
+    border-left: 1px solid rgba(0, 0, 0, 0.09);
+    background-color: #ffff;
+    border-top: none;
+    border-bottom: none;
+
+    svg {
+        fill: rgba(0, 0, 0, 0.8);
+    }
+
+    &:focus {
+        border-top: 2px solid rgba(0, 0, 0, 0.5);
+        border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+    }
+}
+
+.btn-disabled {
+    cursor: default;
+
+    svg {
+        font-weight: 600;
+        fill: #ccc;
+    }
+}

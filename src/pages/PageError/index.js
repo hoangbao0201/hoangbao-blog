@@ -12,7 +12,7 @@ function PageError() {
 
 
     if(authLoading) {
-        return <Spinner size="lg" />
+        return <Spinner modal size="auto" />
     }
     return <div className={cx('page-error')}>
         <img width="300" src='/images/page404.gif' alt='image-gif'/>

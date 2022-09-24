@@ -40,7 +40,7 @@ function Header() {
             body = (
                 <>
                     <Dropdown right>
-                        {user.avatar.url ? (
+                        {user.avatar ? (
                             <img
                                 className={cx("dev-avatar-header-size")}
                                 width="30"
@@ -65,7 +65,7 @@ function Header() {
                     </a>
 
                     <div className={cx("navbar-collapse")}>
-                        <NavbarToggle />
+                        <NavbarToggle content={body}/>
 
                         <div className={cx("action-auth")}>{body}</div>
                     </div>

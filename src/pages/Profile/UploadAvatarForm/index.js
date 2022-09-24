@@ -35,8 +35,6 @@ function UploadAvatar({ uploadAvatar }) {
 
             const percent = Math.floor((loaded / total) * 100);
 
-            console.log( `${loaded}kb of ${total}kb | ${percent}%` );
-
             setSingleProgress(percent);
         },
     };
@@ -62,17 +60,16 @@ function UploadAvatar({ uploadAvatar }) {
 
         setIsSpinner(false);
         window.location.reload();
-        console.log(dataServer);
     };
 
     let body = null;
     if (authLoading) {
         body = <Spinner size="sm" />;
     } else {
-        if (!valueInput && !user.avatar.url) {
+        if (!valueInput && !user.avatar) {
             body = <>{avatarDefault}</>;
         }
-        if (!valueInput && user.avatar.url) {
+        if (!valueInput && user.avatar) {
             body = (
                 <img
                     src={user.avatar.url}

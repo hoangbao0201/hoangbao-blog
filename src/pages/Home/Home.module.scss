@@ -1,6 +1,7 @@
-// .wrapper {
-//     padding: 0px;
-// }
+.list-product {
+    display: flex;
+    flex-wrap: wrap;
+}
 
 @media (min-width: 620px) and (max-width: 1050px) {
     .wrapper {
